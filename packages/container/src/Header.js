@@ -62,7 +62,6 @@ export default function Header({ isSignIn, onSignOut }) {
   const onClick = () => {
     if (isSignIn && onSignOut) {
       onSignOut();
-      history.push('/auth/signin');
     }
   };
 
