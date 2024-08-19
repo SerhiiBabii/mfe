@@ -1,8 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { mount } from 'marketing/MarketingApp';
+import { mount } from 'auth/AuthApp';
 
-export default () => {
+export default ({ onSignIn }) => {
   const ref = useRef(null);
   const history = useHistory();
 
@@ -13,6 +13,10 @@ export default () => {
         if (history.location.pathname !== nextPathname) {
           history.push(nextPathname);
         }
+      },
+      onSignIn: (event) => {
+        event.preventDefault();
+        onSignIn();
       },
     });
 
